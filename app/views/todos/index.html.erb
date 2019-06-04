@@ -2,14 +2,16 @@
 <br>
 <br>
  <div class="card" style="width: 18rem;">
-    <div class="card-body">
+    
         <%@todos.each do|todo|%>
-            <h1 class="card-title"><%=todo.description%></h1>
-            <h1 class="card-title"><%=todo.completed%></h1>
-            <%= link_to "Ver", todo_path(todo), class:"btn btn-primary"%>
-            <%= link_to "Edit", edit_todo_path(todo), class:"btn btn-warning"%>
-            <%= link_to "borrar", todo,method: :delete ,class:"btn btn-danger"%>
-            <%= link_to "completed", completed_todo_path(todo),method: :post ,class:"btn btn-success"%>
+            <div class="card-body">
+                <h1 class="card-title"><%=todo.description%></h1>
+                <h1 class="card-title"><%=todo.completed%></h1>
+                <%= link_to "Ver", todo_path(todo), class:"btn btn-primary"%>
+                <%= link_to "Edit", edit_todo_path(todo), class:"btn btn-warning"%>
+                <%= link_to "borrar", todo,method: :delete ,class:"btn btn-danger"%>
+                <%= link_to "completed", completed_todo_path(todo),method: :post ,class:"btn btn-success"%>
+            </div>
         <%end%>
-    </div>
+    
 </div>
