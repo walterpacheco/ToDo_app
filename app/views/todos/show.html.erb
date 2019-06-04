@@ -1,0 +1,4 @@
+<h1> <%=@todo.description%></h1>
+<p> <%=@todo.completed%></p>
+<p>creado hace_<%=time_ago_in_words @todo.created_at%> </p> 
+<%= link_to "Home", todos_path %>

@@ -1,0 +1,14 @@
+<br>
+<br>
+<br>
+ <div class="card" style="width: 18rem;">
+  <%=@todos.each do|todo|%>
+  <div class="card-body">
+    <h1 class="card-title"> <%=todo.description%></h1>
+    <%= link_to "Ver", todo_path(todo), class:"btn btn-primary"%>
+    <%= link_to "Edit", edit_todo_path(todo), class:"btn btn-primary"%>
+    <%= link_to "borrar", todo,method: :delete ,class:"btn btn-primary"%>
+  </div>
+  <%end%>
+  <%= link_to "nuevo", todos_new_path ,class:"btn btn-primary"%>
+</div>
