@@ -1,4 +1,10 @@
-<h1> <%=@todo.description%></h1>
-<p> <%=@todo.completed%></p>
-<p>creado hace_<%=time_ago_in_words @todo.created_at%> </p> 
-<%= link_to "Home", todos_path %>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <%=label :description ,"tarea"%>
+        <h1> <%=@todo.description%></h1>
+        <%=label :completed ,"Estado de la Tarea: "%>
+        <p> <%=@todo.completed%></p>
+        <p>creado hace_<%=time_ago_in_words @todo.created_at%> </p> 
+    </div>
+     <%= link_to "Home", todos_path %>
+</div>

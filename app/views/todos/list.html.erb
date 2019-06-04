@@ -1,8 +1,36 @@
 <div class="row">
     <div class="col-md-6 col-lg-6- col-sm-6 col-xs-6">
-
+        <h1>ToDos NO completados</h1>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                
+                    <%@todos.each do|todo|%>
+                        <% if todo.completed == false %>
+                            <h1 class="card-title"><%=todo.description%></h1>
+                            <%= link_to "Ver", todo_path(todo), class:"btn btn-primary"%>
+                            <%= link_to "Edit", edit_todo_path(todo), class:"btn btn-warning"%>
+                            <%= link_to "borrar", todo,method: :delete ,class:"btn btn-danger"%>
+                            <%= link_to "completed", completed_todo_path(todo),method: :post ,class:"btn btn-success"%>
+                        <%end%>
+                <%end%>
+        </div>
+    </div>
     </div>
     <div class="col-md-6 col-lg-6- col-sm-6 col-xs-6">
+        <h1>ToDos  completados</h1>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <%@todos.each do|todo|%>
+                    <%if todo.completed == true%>
+                        <h1 class="card-title"><%=todo.description%></h1>
 
+                        <%= link_to "Ver", todo_path(todo), class:"btn btn-primary"%>
+                        <%= link_to "Edit", edit_todo_path(todo), class:"btn btn-warning"%>
+                        <%= link_to "borrar", todo,method: :delete ,class:"btn btn-danger"%>
+                        <%= link_to "completed", completed_todo_path(todo),method: :post ,class:"btn btn-success"%>
+                        <%end%>
+                <%end%>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,10 +1,14 @@
 <br>
 <br>
 <br>
-<%=form_with(model:@todo,local:true) do|f|%>
-    <%=f.label :description ,"Ingrese una descipción"%>
-    <%=f.text_area :description%>
-    <%=f.label :completed ,"Ingrese valor boolean"%>
-    <%=f.text_field :completed%>
-    <%=f.submit "Enviar"%>
-<%end%>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <%=form_with(model:@todo,local:true) do|f|%>
+            <%=f.label :description ,"Ingrese una descipción"%>
+            <%=f.text_area :description%>
+            <%=f.label :completed ,"la tarea está realizada"%>
+            <%= f.check_box :completed %>            
+            <%=f.submit "Enviar"%>
+        <%end%>
+    </div> 
+</div>   
